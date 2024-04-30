@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Menu da Cantina Universitária</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Menu da Cantina Universitária</h1>
+    {% for cardapio in cardapios %}
+    <section class="lanches">
+        <div class="lanche-1">
+            <img class="img" src="{{ url_for('static', filename='./assets/imagens/hamburguer.jpeg')}}" alt="">
+            <h2>Hamburguer</h2>
+            <a href="{{ url_for('cardapio', id=cardapio.id) }}">Saiba mais</a>
+        </div>
+        <div class="lanche-2">
+            <img class="img" src="{{ url_for('static', filename='./assets/imagens/pizza.jpeg')}}" alt="">
+            <h2>Pizza</h2>
+            <a href="{{ url_for('cardapio', id=cardapio.id) }}">Saiba mais</a>
+        </div>
+        <div class="lanche-3">
+            <img class="img" src="{{ url_for('static', filename='./assets/imagens/petiscos.jpeg')}}" alt="">
+            <h2>Petiscos</h2>
+            <a href="{{ url_for('cardapio', id=cardapio.id) }}">Saiba mais</a>
+        </div>
+        <div class="lanche-4">
+            <img class="img" src="{{ url_for('static', filename='./assets/imagens/image.png')}}" alt="">
+            <h2>Macarrão</h2>
+            <a href="{{ url_for('cardapio', id=cardapio.id) }}">Saiba mais</a>
+        </div>
+    </section>
+    {% endfor %}
+</body>
+</html>

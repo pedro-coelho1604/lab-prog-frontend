@@ -1,0 +1,1 @@
+Baseado nos requerimentos do site, o foco foi na funcionalidade do site, e não em sua estilização. Portanto, foi feito uma transição entre as páginas, contendo todos os elementos solicitados sobre o lanche
