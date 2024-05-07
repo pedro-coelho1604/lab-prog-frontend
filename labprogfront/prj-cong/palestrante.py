@@ -1,5 +1,5 @@
 class Palestrante:
-    def __init__(id, biografia, especializacao, outroseventos, comentarios, avaliacoes, self) -> None:
+    def __init__(self, id, biografia, especializacao, outroseventos, comentarios, avaliacoes) -> None:
         self.id = id
         self.biografia = biografia
         self.especializacao = especializacao
@@ -8,7 +8,7 @@ class Palestrante:
         self.avaliacoes = avaliacoes
 
 class Sessao:
-    def __init__(id, descricao, horarios, localizacao, comentarios, self) -> None:
+    def __init__(self, id, descricao, horarios, localizacao, comentarios) -> None:
         self.id = id
         self.descricao = descricao
         self.horarios = horarios
