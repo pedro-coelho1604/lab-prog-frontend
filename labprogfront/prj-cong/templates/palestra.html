@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palestrantes</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <main class="container">
+        <h1>{{ palestra.nome }}</h1>
+        <div class="data-palestra">
+            <span class="dia-palestra">{{ palestra.dia }}</span>
+            <span class="mes-palestra">{{ palestra.mes }}</span>
+        </div>
+        <img src="{{url_for('static', filename=palestra.foto)}}" alt="Foto da sessão." class="foto-sessao">
+        <p class="descricao-palestra">{{ palestra.descricao }}</p>
+        <div class="mapa-palestra">
+            <iframe src="{{ palestra.mapa }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <h2 class="h2-palestra">Palestrantes</h2>
+        <div class="palestrantes-da-sessao">
+            {% for palestrante in palestrantes %}
+                {% for i in palestra.palestrantes %}
+                    {% if i == palestrante.id %}
+                        <div class="card-palestrante gap-1">
+                            <a href="{{ url_for('ministrante', id=palestrante.id) }}">
+                                <div class="foto-e-nome-palestrante">
+                                    <img src="{{url_for('static', filename=palestrante.foto)}}" alt="Foto do plaestrante" class="foto-do-palestrante">
+                                    <h2 class="nome-palestrante">{{ palestrante.nome }}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

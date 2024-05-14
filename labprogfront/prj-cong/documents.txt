@@ -1,0 +1,1 @@
+Foco na estilização do primeiro layout para acostumar com design para front. Funcionalidade de páginas por id estão funcionando. Informações de detalhes foram passadas as mais essenciais

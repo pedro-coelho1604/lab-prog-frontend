@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palestrantes</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <main class="container">
+        <h1>Palestrantes</h1>
+        {% for palestrante in palestrantes %}
+            {% for i in palestra.palestrantes%}
+                {% if i == palestrante.id %}
+                    <div class="card-palestrante gap-1">
+                        <div class="foto-e-nome-palestrante">
+                            <img src="{{url_for('static', filename=palestrante.foto)}}" alt="Foto do plaestrante" class="foto-do-palestrante">
+                            <h2 class="nome-palestrante">{{ palestrante.nome }}</h2>
+                        </div>
+                        <p class="descricao-palestrante">{{ palestrante.descricao }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </main>
+</body>
+</html>
